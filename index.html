@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dino-Aarón </title>
+
+    <style>
+        body{
+            height: 100vh;
+            background: #4C009D;
+            display:flex;
+            align-items: center;
+        }
+
+        .contenedor{
+            width: 920px;
+            height: 280px;
+            margin: 0 auto;
+            position: relative;
+
+            background: url(img/fondo.png);
+            background-size: 960px 280px ;
+            background-position-x: 0px;
+            transition: background-color 1s lineal;
+            overflow: hidden;
+            
+        }
+
+        .dino{
+            width: 84px;
+            height: 84px;
+
+            position: absolute;
+            bottom: 22px;
+            left: 22px;
+            z-index: 2;
+
+            background: url(img/timmy3.png);
+            background-size: 756px 84px;
+            background-position-x: 0px;
+        }
+        .dinoCorriendo {
+            animation: animarDino 0.8s steps(8) infinite;
+        }
+
+        
+        @keyframes animarDino {
+            from{
+                background-position-x: -84px;
+            }
+            to {
+                background-position-x: -756px;
+            }
+            
+        }
+        .suelo {
+            width: 200%;
+            height: 42px;
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            background: url(img/piso.png) repeat-x 0px 0px;
+            background-size: 50% 42px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="suelo"></div>
+        <div class="dino dinoCorriendo"></div>
+    </div>
+</body>
+
+</html>
